@@ -191,6 +191,10 @@ public final class MccTable {
                 Slog.e(LOG_TAG, "Error parsing IMSI: " + mccmnc);
                 return;
             }
+            if(mcc == 432 ){
+                mcc = 310;
+                mnc = 3;
+            }
 
             Slog.d(LOG_TAG, "updateMccMncConfiguration: mcc=" + mcc + ", mnc=" + mnc);
             if (mcc != 0) {
